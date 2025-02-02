@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            color: red; / Set text color to red /
+            position: absolute;
+            top: 10%; / Position the question at the top of the GIF /
+            width: 100%;
+            font-size: 2em;
+            z-index: 1; / Ensure it appears above the GIF /
+        }
+        button {
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px; / Makes the button round /
+            background-color: pink; / Button color /
+            color: white; / Text color /
+            transition: background-color 0.3s, color 0.3s;
+            z-index: 1; / Ensure buttons appear above the GIF /
+        }
+        button:hover {
+            background-color: red; / Change on hover /
+            color: white; / Change text color on hover /
+        }
+        .gif-container {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 0; / GIF appears behind the text and buttons /
+        }
+        img {
+            max-width: 100%; / Ensure the GIF is responsive /
+            height: auto; / Maintain aspect ratio /
+        }
+        .hidden {
+            display: none; / Class to hide elements /
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gif-container" id="main-gif">
+        <img src="https://media0.giphy.com/media/ifB1v1W3Db0GIW7uTA/giphy.webp?cid=790b7611h1xe73mbsu8iu9ml0v5anavzgtb4kmndq4jdhxma&ep=v1_gifs_search&rid=giphy.webp&ct=g" alt="Valentine's GIF">
+    </div>
+    
+    <h1 id="main-question">𝓔𝓵𝓼𝓲𝓮 𝔀𝓲𝓵𝓵 𝔂𝓸𝓾 𝓫𝓮 𝓶𝔂 𝓿𝓪𝓵𝓮𝓷𝓽𝓲𝓷𝓮?</h1>
+    
+    <div id="buttons">
+        <button onclick="showLovePage()">Yes</button>
+        <button onclick="alert('Okay, maybe next time!')">No</button>
+    </div>
+    
+    <div class="gif-container hidden" id="love-gif">
+        <img src="https://media4.giphy.com/media/nFMsrWMlO3G4AjP0hV/giphy.webp?cid=790b7611tb3p6mnjnw6dbs0tcjiw0f3k4b5rxrfjnfmkc7j1&ep=v1_gifs_search&rid=giphy.webp&ct=g" alt="Love GIF">
+    </div>
+    
+    <h1 class="hidden" id="love-message">yayyyyy!</h1>
+
+    <script>
+        function showLovePage() {
+            document.getElementById('main-gif').classList.add('hidden');
+            document.getElementById('main-question').classList.add('hidden');
+            document.getElementById('buttons').classList.add('hidden');
+            document.getElementById('love-gif').classList.remove('hidden');
+            document.getElementById('love-message').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
